@@ -19,7 +19,7 @@ export const translateWords = async (params: LangType): Promise<WordType[]> => {
 	const key = import.meta.env.VITE_TRANSLATE_API;
 
 	try {
-		const words = generate(8).map((i) => ({
+		const words: { Text: string }[] = (generate(8) as string[]).map((i) => ({
 			Text: i,
 		}));
 
